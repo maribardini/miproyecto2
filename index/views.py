@@ -1,17 +1,15 @@
-from http.client import HTTPResponse
-from django.http import HttpResponse, HttpResponseBadRequest
-from django.template import loader
-
+from django.shortcuts import render
 
 # Create your views here.
 
 def index(request):
-    return HttpResponse('<h1>Bienvenidos a mi pagina de Django</h1>')
+    return render(request,'index/index.html',{})
 
-def plantilla(request):
-    
-    template = loader.get_template('plantilla.html')
-    
-    plantilla_generada = template.render({})
-    
-    return HttpResponse(plantilla_generada)
+def plantilla(request):  
+    datos = {
+        'lista': ['primero','segundo','tercero'],
+        'nombre':'Gael', 
+        'apellido':'Fort'
+    }
+       
+    return render(request,'index/plantilla.html',datos)

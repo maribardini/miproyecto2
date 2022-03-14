@@ -1,0 +1,23 @@
+{% extends 'index/index.html' %}
+
+{% block 'header_block' %}
+    <h1 class="mb-5">
+        Hola esta es mi plantilla!!!
+    </h1>
+{% endblock 'header_block' %}
+
+{% block 'body_block' %}
+    <h2>
+        {{nombre}}
+    </h2>
+
+    {% if nombre == apellido %}
+        <h3>{{apellido}}</h3>
+    {% endif %}
+
+    {% for valor in lista %}
+        <li>
+            {{valor}}
+        </li>
+    {% endfor %}
+{% endblock 'body_block' %}

@@ -1,15 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
-
 def index(request):
-    return render(request,'index/index.html',{})
+    return render(request, 'index/index.html', {})
 
-def plantilla(request):  
+def plantilla(request):
     datos = {
-        'lista': ['primero','segundo','tercero'],
-        'nombre':'Gael', 
-        'apellido':'Fort'
+        'lista': ['primero', 'segundo', 'tercero'],
+        'nombre': 'Gael',
+        'apellido': 'Fort'
     }
-       
-    return render(request,'index/plantilla.html',datos)
+    return render(request, 'index/plantilla.html', datos)

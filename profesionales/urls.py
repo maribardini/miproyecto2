@@ -1,7 +1,7 @@
-# from django.urls import path
-# from .views import profesionalesformulario, nueva_profesion
+from django.urls import path
+from . import views
 
-# urlpatterns = [
-#     path('nuevaprofesion/',nueva_profesion, name='nueva_profesion'),
-#     path('profesionalesformulario/',profesionalesformulario, name='profesionalesformulario')
-#     ]
+urlpatterns = [
+    path('cerrajero/crear/', views.crear_cerrajero, name="crear_cerrajero"),
+    path('cerrajeros/', views.lista_cerrajeros, name="lista_cerrajeros"),
+]
